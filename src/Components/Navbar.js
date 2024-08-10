@@ -40,9 +40,18 @@ const Navbar = () => {
 
   const handleScroll = (id) => {
     setActiveLink(id); // Set the clicked link as active
+
     const element = document.getElementById(id);
+    const navbar = document.querySelector("header"); // Assuming your navbar is in a header element
+    const navbarHeight = navbar.offsetHeight;
+
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - navbarHeight, // Scroll with offset
+        behavior: "smooth",
+      });
     }
   };
 
@@ -158,7 +167,7 @@ const Navbar = () => {
             </Button>
             <Button
               color="inherit"
-              onClick={() => handleScroll("vision")}
+              onClick={() => handleScroll("mission")}
               sx={{
                 position: "relative",
                 "&:hover:after": {
@@ -237,7 +246,7 @@ const Navbar = () => {
               variant="contained"
               onClick={changeLanguage}
               startIcon={<LanguageIcon sx={{ ml: 1 }} />}
-              sx={{ display: { xs: "none", md: "flex" }}}
+              sx={{ display: { xs: "none", md: "flex" } }}
             >
               {i18n.language === "en" ? "AR" : "EN"}
             </Button>
