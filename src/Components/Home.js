@@ -68,7 +68,7 @@ export default function Home() {
             fontFamily: "Inter",
             color: "#fff",
             textAlign: "center",
-            width: "50%",
+            width: { xs: "75%", md: "50%" },
             paddingTop: "20px",
           }}
         >

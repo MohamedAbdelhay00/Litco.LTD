@@ -64,7 +64,7 @@ const Navbar = () => {
         <ListItem button onClick={() => handleScroll("about-us")}>
           <ListItemText primary={t("about")} />
         </ListItem>
-        <ListItem button onClick={() => handleScroll("vision")}>
+        <ListItem button onClick={() => handleScroll("mission")}>
           <ListItemText primary={t("vision")} />
         </ListItem>
         <ListItem button onClick={() => handleScroll("services")}>
