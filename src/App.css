@@ -1,0 +1,19 @@
+/* src/App.css */
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .App {
+    direction: var(--direction, ltr);
+  }
+  
+  /* Additional styles for RTL */
+  html[dir="rtl"] .navbar {
+    /* Adjust navbar styling for RTL if needed */
+  }
+  
+  html[dir="rtl"] .content {
+    /* Adjust content styling for RTL if needed */
+  }
+  

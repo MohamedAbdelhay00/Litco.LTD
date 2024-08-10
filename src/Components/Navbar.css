@@ -1,0 +1,24 @@
+/* src/components/Navbar.css */
+.logo {
+    height: 40px;
+  }
+  
+  @media (max-width: 600px) {
+    .MuiDrawer-paper {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+  }
+  
+  .MuiAppBar-root {
+    padding: 10px 20px;
+  }
+  
+  .MuiButton-root {
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+  
+  .MuiTypography-root {
+    font-family: 'YourChosenFont', sans-serif; /* Use the preferred font */
+  }
+  
