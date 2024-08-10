@@ -27,7 +27,7 @@ export default function Home() {
         alignItems: "center",
         width: "100%",
         height: "80vh",
-        padding: "20px",
+        padding: { xs: "10px", md: "20px" },
         boxSizing: "border-box",
         animation: `${fadeIn} 2s ease-in-out`,
       }}
@@ -53,12 +53,12 @@ export default function Home() {
           sx={{
             fontFamily: "Inter",
             fontWeight: 700,
-            fontSize: { xs: "2.5rem", md: "3rem" },
+            fontSize: { xs: "2rem", md: "2.5rem" },  // Adjusted for smaller screens
             color: "#fff",
             textAlign: "center",
-            width: { xs: "100%", md: "50%" },
+            width: { xs: "90%", md: "50%" },
             paddingTop: "20px",
-            
+            lineHeight: 1.2, // Improved line height
           }}
         >
           {t('welcome')}
@@ -68,15 +68,16 @@ export default function Home() {
             fontFamily: "Inter",
             color: "#fff",
             textAlign: "center",
-            width: { xs: "75%", md: "50%" },
+            width: { xs: "80%", md: "50%" },
             paddingTop: "20px",
+            fontSize: { xs: "1rem", md: "1.5rem" },  // Adjusted for smaller screens
           }}
         >
           {t('homeDescription')}
         </Typography>
         <Button 
           variant="contained" 
-          sx={{ mt: 1, padding: "10px 20px" }}
+          sx={{ mt: 1, padding: "10px 20px", fontSize: "1rem" }}
           onClick={scrollToContact} // Scroll to contact on click
         >
           {t("contact")}
