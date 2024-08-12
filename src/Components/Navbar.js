@@ -72,7 +72,10 @@ const Navbar = () => {
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
 
     sections.forEach((id) => {
       const section = document.getElementById(id);
@@ -117,11 +120,11 @@ const Navbar = () => {
     <Box
       sx={{
         flexGrow: 1,
-        position: {"-webkit-sticky": "sticky"},
+        position: "sticky", // Standard support
         top: "0",
         zIndex: "1000",
         backgroundColor: "rgba(255, 255, 255, 0.9)",
-        marginBottom: "20px"
+        marginBottom: "20px",
       }}
     >
       <AppBar
