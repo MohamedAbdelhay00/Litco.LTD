@@ -39,7 +39,7 @@ export default function Mission() {
             </Typography>
             <Typography
               sx={{
-                textAlign: { xs: "center", md: isArabic ? "right" : "left" },
+                textAlign:  isArabic ? "right" : "left",
                 fontSize: "1.1rem",
                 color: "#555",
                 marginTop: "20px",

@@ -15,7 +15,7 @@ export default function AboutUs() {
             <Typography sx={{  textAlign: { xs: "center", md: isArabic ? "right" : "left" }, fontSize: "2.5rem", fontWeight: "bold", color: "#333", marginBottom: "30px" }} variant="h4">
             {t("aboutUS")}
             </Typography>
-            <Typography sx={{ textAlign: { xs: "center", md: isArabic ? "right" : "left" }, fontSize: "1.1rem", color: "#555", marginTop: "20px" }}>
+            <Typography sx={{ textAlign: isArabic ? "right" : "left", fontSize: "1.1rem", color: "#555", marginTop: "20px" }}>
               <Typography sx={{ fontWeight: "bold", display: "inline-block", color: "#0056b3" }}>
                 Litco LTD
               </Typography>{" "}
