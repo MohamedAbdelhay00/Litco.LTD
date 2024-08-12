@@ -53,7 +53,6 @@ export default function Home() {
         <Typography
           variant="h3"
           sx={{
-            fontFamily: "Inter",
             fontWeight: 700,
             fontSize: { xs: "2rem", md: "2.5rem" },  // Adjusted for smaller screens
             color: "#fff",
@@ -67,7 +66,6 @@ export default function Home() {
         </Typography>
         <Typography
           sx={{
-            fontFamily: "Inter",
             color: "#fff",
             textAlign: "center",
             width: { xs: "80%", md: "50%" },

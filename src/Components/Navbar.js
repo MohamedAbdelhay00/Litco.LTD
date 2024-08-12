@@ -21,6 +21,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
   const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === 'ar';
   const { setDirection } = useDirection();
 
   const handleDrawerToggle = () => {
