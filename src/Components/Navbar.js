@@ -54,7 +54,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const sections = ["home", "about-us", "mission", "services", "contact-us"];
+    const sections = ["home", "about-us", "mission", "strategy", "contact-us"];
     const navbar = document.querySelector("header");
     const navbarHeight = navbar.offsetHeight;
 
@@ -99,8 +99,8 @@ const Navbar = () => {
         <ListItem button onClick={() => handleScroll("mission")}>
           <ListItemText primary={t("mission")} />
         </ListItem>
-        <ListItem button onClick={() => handleScroll("services")}>
-          <ListItemText primary={t("services")} />
+        <ListItem button onClick={() => handleScroll("strategy")}>
+          <ListItemText primary={t("strategy")} />
         </ListItem>
         <ListItem button onClick={() => handleScroll("contact-us")}>
           <ListItemText primary={t("contact-us")} />
@@ -117,8 +117,7 @@ const Navbar = () => {
     <Box
       sx={{
         flexGrow: 1,
-        position: "-webkit-sticky",
-        position: "sticky",
+        position: {"-webkit-sticky": "sticky"},
         top: "0",
         zIndex: "1000",
         backgroundColor: "rgba(255, 255, 255, 0.9)",
@@ -149,7 +148,7 @@ const Navbar = () => {
               justifyContent: "center",
             }}
           >
-            {["home", "about-us", "mission", "services", "contact-us"].map(
+            {["home", "about-us", "mission", "strategy", "contact-us"].map(
               (id) => (
                 <Button
                   key={id}

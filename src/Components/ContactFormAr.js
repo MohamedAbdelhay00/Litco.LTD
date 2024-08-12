@@ -5,6 +5,7 @@ import emailjs from "emailjs-com";
 import { Box, Button, TextField } from "@mui/material";
 import { toast } from "react-toastify";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+// eslint-disable-next-line
 import rtlPlugin from "stylis-plugin-rtl";
 import { prefixer } from "stylis";
 import { CacheProvider } from "@emotion/react";
