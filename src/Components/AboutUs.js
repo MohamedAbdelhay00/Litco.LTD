@@ -8,7 +8,7 @@ export default function AboutUs() {
   const { t } = useTranslation();
   const isArabic = i18n.language === 'ar';
   return (
-    <Stack sx={{ backgroundColor: "#f9f9f9", padding: "5% 10%", marginBottom: "20px" }}>
+    <Stack sx={{ backgroundColor: "#f9f9f9", padding: "5% 10%" }}>
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
           <Box>

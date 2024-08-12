@@ -16,4 +16,20 @@ body, html {
   html[dir="rtl"] .content {
     /* Adjust content styling for RTL if needed */
   }
+
+  @font-face {
+    font-family: 'FS Albert Arabic';
+    src: url('./assets/fonts/alfont_com_AlFont_com_FSAlbertArabic-Regular.ttf') format('ttf'),
+         url('./assets/fonts/alfont_com_AlFont_com_FSAlbertArabic-Bold.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'FS Albert Arabic';
+    src: url('./assets/fonts/alfont_com_AlFont_com_FSAlbertArabic-Regular.ttf') format('ttf'),
+         url('./assets//fonts//alfont_com_AlFont_com_FSAlbertArabic-Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+  }
   

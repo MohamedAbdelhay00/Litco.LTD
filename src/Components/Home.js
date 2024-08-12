@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
-import bg from "../assets/images/ship-5247536.jpg";
+import bg from "../assets/images/ship-2.jpg";
 import { useTranslation } from "react-i18next";
 import { keyframes } from '@mui/system';
 
@@ -34,8 +34,9 @@ export default function Home() {
     >
       <Box
         sx={{
-          backgroundImage: `url(${bg})`,
+          background: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(${bg})`,
           width: `calc(100% - 20px)`,
+          objectFit: "cover",
           height: "100%",
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -57,7 +58,7 @@ export default function Home() {
             color: "#fff",
             textAlign: "center",
             width: { xs: "90%", md: "50%" },
-            paddingTop: "20px",
+            paddingTop: "5%",
             lineHeight: 1.2, // Improved line height
           }}
         >

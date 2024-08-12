@@ -41,7 +41,7 @@ export default function Strategy() {
       </Typography>
       <Grid container spacing={4} justifyContent="center" sx={{ textAlign: 'center', gap: '20px' }}>
         {strategies.map((strategy, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index} sx={{ width: { xs: '100%', sm: '48%', md: '30%' }, marginBottom: '20px' }}>
+          <Grid item xs={12} sm={6} md={3} key={index} sx={{ width: { xs: '100%', sm: '48%', md: '30%' }, marginBottom: '0px' }}>
             <Card sx={{ padding: '20px', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out', '&:hover': { transform: 'scale(1.05)', boxShadow: '0 8px 16px rgba(0,0,0,0.2)' },  height: '100%' }}>
               <CardContent>
                 {strategy.icon}
