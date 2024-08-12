@@ -1,6 +1,6 @@
 import { Box, Stack, Typography, Grid } from "@mui/material";
 import React from "react";
-import missionVisionImg from "../assets/images/vision 2.jpg"; // Replace with a relevant image
+import missionVisionImg from "../assets/images/vision 3.jpg"; // Replace with a relevant image
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 
@@ -8,10 +8,10 @@ export default function Mission() {
   const { t } = useTranslation();
   const isArabic = i18n.language === "ar";
   return (
-    <Stack sx={{ padding: "5% 10%", marginBottom: { xs: "2rem", md: "4rem" }, }}>
+    <Stack sx={{ padding: "5% 10%", }}>
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
-          <Box sx={{ textAlign: "center", margin: "20px" }}>
+          <Box sx={{ textAlign: "center", margin: "20px 20px 0" }}>
             <img
               src={missionVisionImg}
               alt="Mission and Vision"

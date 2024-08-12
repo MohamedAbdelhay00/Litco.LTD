@@ -13,7 +13,7 @@ export default function ContactUs() {
   const isArabic = i18n.language === "ar";
 
   return (
-    <Box sx={{ padding: "5% 10%", backgroundColor: "#ffffff", marginBottom: { xs: "2rem", md: "4rem" }, }}>
+    <Box sx={{ padding: "5% 10%", backgroundColor: "#ffffff" }}>
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
           <Typography
@@ -42,7 +42,14 @@ export default function ContactUs() {
               onClick={() => window.open("tel:+966555344342")}
             >
               <IconButton
-                sx={{ color: "#ffffff", backgroundColor: "#004aad" }}
+                sx={{
+                  color: "#ffffff",
+                  backgroundColor: "#004aad",
+                  ":hover": {
+                    color: "#004aad",
+                    backgroundColor: "#ffffff",
+                  },
+                }}
                 aria-label="phone"
               >
                 <PhoneIcon fontSize="medium" />
@@ -63,7 +70,14 @@ export default function ContactUs() {
               onClick={() => window.open("mailto:fadi_omar2010@hotmail.com")}
             >
               <IconButton
-                sx={{ color: "#ffffff", backgroundColor: "#004aad" }}
+                sx={{
+                  color: "#ffffff",
+                  backgroundColor: "#004aad",
+                  ":hover": {
+                    color: "#004aad",
+                    backgroundColor: "#ffffff",
+                  },
+                }}
                 aria-label="email"
               >
                 <EmailIcon fontSize="medium" />
@@ -72,6 +86,7 @@ export default function ContactUs() {
                 fadi_omar2010@hotmail.com
               </Typography>
             </Box>
+
             <Box
               sx={{
                 display: "flex",
@@ -85,7 +100,14 @@ export default function ContactUs() {
               }
             >
               <IconButton
-                sx={{ color: "#ffffff", backgroundColor: "#004aad" }}
+                sx={{
+                  color: "#ffffff",
+                  backgroundColor: "#004aad",
+                  ":hover": {
+                    color: "#004aad",
+                    backgroundColor: "#ffffff",
+                  },
+                }}
                 aria-label="whatsapp"
               >
                 <WhatsAppIcon fontSize="medium" />
