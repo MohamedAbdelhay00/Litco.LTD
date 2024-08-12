@@ -28,6 +28,7 @@ export default function Home() {
         width: "100%",
         height: "80vh",
         padding: { xs: "10px", md: "20px" },
+        marginBottom: { xs: "2rem", md: "4rem" },
         boxSizing: "border-box",
         animation: `${fadeIn} 2s ease-in-out`,
       }}
@@ -81,7 +82,7 @@ export default function Home() {
           sx={{ mt: 1, padding: "10px 20px", fontSize: "1rem" }}
           onClick={scrollToContact} // Scroll to contact on click
         >
-          {t("contact")}
+          {t("contact-us")}
         </Button>
       </Box>
     </Stack>

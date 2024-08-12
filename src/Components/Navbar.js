@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -12,15 +12,14 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import LanguageIcon from "@mui/icons-material/Language";
-import { Link } from "react-router-dom";
-import logo from "../assets/images/logo3.png";
-import "./Navbar.css";
 import { useTranslation } from "react-i18next";
 import { useDirection } from "../context/DirectionContext";
+import logo from "../assets/images/logo3.png";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("home"); // State to track active link
+  const [activeLink, setActiveLink] = useState("home");
   const { t, i18n } = useTranslation();
   const { setDirection } = useDirection();
 
@@ -39,21 +38,54 @@ const Navbar = () => {
   };
 
   const handleScroll = (id) => {
-    setActiveLink(id); // Set the clicked link as active
-
+    setActiveLink(id);
     const element = document.getElementById(id);
-    const navbar = document.querySelector("header"); // Assuming your navbar is in a header element
+    const navbar = document.querySelector("header");
     const navbarHeight = navbar.offsetHeight;
 
     if (element) {
       const elementPosition =
         element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
-        top: elementPosition - navbarHeight, // Scroll with offset
+        top: elementPosition - navbarHeight,
         behavior: "smooth",
       });
     }
   };
+
+  useEffect(() => {
+    const sections = ["home", "about-us", "mission", "services", "contact-us"];
+    const navbar = document.querySelector("header");
+    const navbarHeight = navbar.offsetHeight;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: `-${navbarHeight}px 0px 0px 0px`,
+      threshold: 0.3,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -90,14 +122,15 @@ const Navbar = () => {
         top: "0",
         zIndex: "1000",
         backgroundColor: "rgba(255, 255, 255, 0.9)",
+        marginBottom: "20px"
       }}
     >
       <AppBar
         position="sticky"
         sx={{
-          backgroundColor: "rgba(255, 255, 255, 0.2)", // Semi-transparent background
-          backdropFilter: "blur(10px)", // Apply blur effect
-          boxShadow: "none", // Remove default shadow
+          backgroundColor: "rgba(255, 255, 255, 0.2)",
+          backdropFilter: "blur(10px)",
+          boxShadow: "none",
           border: "1px solid rgba(255, 255, 255, 0.3)",
         }}
       >
@@ -116,130 +149,35 @@ const Navbar = () => {
               justifyContent: "center",
             }}
           >
-            <Button
-              color="inherit"
-              onClick={() => handleScroll("home")}
-              sx={{
-                position: "relative",
-                "&:hover:after": {
-                  transform: "scaleX(1)",
-                },
-                "&:after": {
-                  content: '""',
-                  position: "absolute",
-                  width: "100%",
-                  height: "2px",
-                  bottom: "0",
-                  left: "0",
-                  backgroundColor: "#1976d2", // Primary color
-                  transform: activeLink === "home" ? "scaleX(1)" : "scaleX(0)",
-                  transformOrigin: "bottom right",
-                  transition: "transform 0.25s ease-out",
-                },
-              }}
-            >
-              {t("home")}
-            </Button>
-            <Button
-              color="inherit"
-              onClick={() => handleScroll("about-us")}
-              sx={{
-                position: "relative",
-                "&:hover:after": {
-                  transform: "scaleX(1)",
-                },
-                "&:after": {
-                  content: '""',
-                  position: "absolute",
-                  width: "100%",
-                  height: "2px",
-                  bottom: "0",
-                  left: "0",
-                  backgroundColor: "#1976d2", // Primary color
-                  transform:
-                    activeLink === "about-us" ? "scaleX(1)" : "scaleX(0)",
-                  transformOrigin: "bottom right",
-                  transition: "transform 0.25s ease-out",
-                },
-              }}
-            >
-              {t("about")}
-            </Button>
-            <Button
-              color="inherit"
-              onClick={() => handleScroll("mission")}
-              sx={{
-                position: "relative",
-                "&:hover:after": {
-                  transform: "scaleX(1)",
-                },
-                "&:after": {
-                  content: '""',
-                  position: "absolute",
-                  width: "100%",
-                  height: "2px",
-                  bottom: "0",
-                  left: "0",
-                  backgroundColor: "#1976d2", // Primary color
-                  transform:
-                    activeLink === "vision" ? "scaleX(1)" : "scaleX(0)",
-                  transformOrigin: "bottom right",
-                  transition: "transform 0.25s ease-out",
-                },
-              }}
-            >
-              {t("vision")}
-            </Button>
-            <Button
-              color="inherit"
-              onClick={() => handleScroll("services")}
-              sx={{
-                position: "relative",
-                "&:hover:after": {
-                  transform: "scaleX(1)",
-                },
-                "&:after": {
-                  content: '""',
-                  position: "absolute",
-                  width: "100%",
-                  height: "2px",
-                  bottom: "0",
-                  left: "0",
-                  backgroundColor: "#1976d2", // Primary color
-                  transform:
-                    activeLink === "services" ? "scaleX(1)" : "scaleX(0)",
-                  transformOrigin: "bottom right",
-                  transition: "transform 0.25s ease-out",
-                },
-              }}
-            >
-              {t("services")}
-            </Button>
-            <Button
-              color="inherit"
-              onClick={() => handleScroll("contact-us")}
-              sx={{
-                position: "relative",
-                "&:hover:after": {
-                  transform: "scaleX(1)",
-                },
-                "&:after": {
-                  content: '""',
-                  position: "absolute",
-                  width: "100%",
-                  height: "2px",
-                  bottom: "0",
-                  left: "0",
-                  backgroundColor: "#1976d2", // Primary color
-                  transform:
-                    activeLink === "contact-us" ? "scaleX(1)" : "scaleX(0)",
-                  transformOrigin: "bottom right",
-                  transition: "transform 0.25s ease-out",
-                },
-              }}
-            >
-              {t("contact")}
-            </Button>
+            {["home", "about-us", "mission", "services", "contact-us"].map(
+              (id) => (
+                <Button
+                  key={id}
+                  color="inherit"
+                  onClick={() => handleScroll(id)}
+                  sx={{
+                    position: "relative",
+                    "&:hover:after": {
+                      transform: "scaleX(1)",
+                    },
+                    "&:after": {
+                      content: '""',
+                      position: "absolute",
+                      width: "100%",
+                      height: "2px",
+                      bottom: "0",
+                      left: "0",
+                      backgroundColor: "#1976d2",
+                      transform: activeLink === id ? "scaleX(1)" : "scaleX(0)",
+                      transformOrigin: "bottom right",
+                      transition: "transform 0.25s ease-out",
+                    },
+                  }}
+                >
+                  {t(id)}
+                </Button>
+              )
+            )}
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Button
@@ -269,7 +207,7 @@ const Navbar = () => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", md: "none" },

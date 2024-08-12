@@ -13,7 +13,7 @@ export default function ContactUs() {
   const isArabic = i18n.language === "ar";
 
   return (
-    <Box sx={{ padding: "5% 10%", backgroundColor: "#ffffff" }}>
+    <Box sx={{ padding: "5% 10%", backgroundColor: "#ffffff", marginBottom: { xs: "2rem", md: "4rem" }, }}>
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
           <Typography
@@ -21,7 +21,7 @@ export default function ContactUs() {
             color={"primary"}
             sx={{ marginBottom: "20px", fontWeight: "bold" }}
           >
-            {t("contact")}
+            {t("contact-us")}
           </Typography>
           <Typography
             variant="h3"
@@ -30,7 +30,7 @@ export default function ContactUs() {
             {t("howCanWeHelp")}
           </Typography>
           <Typography sx={{ marginBottom: "20px" }}>{t("fillForm")}</Typography>
-          <Box>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <Box
               sx={{
                 display: "flex",

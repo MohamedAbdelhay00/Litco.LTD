@@ -35,8 +35,8 @@ export default function Strategy() {
   ];
 
   return (
-    <Box sx={{ padding: '5% 10%', background: 'linear-gradient(180deg, #f9f9f9 0%, #e0e0e0 100%)', borderRadius: '8px' }}>
-      <Typography variant="h4" sx={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '20px', color: '#333' }}>
+    <Box sx={{ padding: '5% 10%', background: 'linear-gradient(180deg, #f9f9f9 0%, #e0e0e0 100%)', borderRadius: '8px', marginBottom: { xs: "2rem", md: "4rem" }, }}>
+      <Typography variant="h4" sx={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '40px', color: '#333' }}>
         {t('strategy')}
       </Typography>
       <Grid container spacing={4} justifyContent="center" sx={{ textAlign: 'center', gap: '20px' }}>

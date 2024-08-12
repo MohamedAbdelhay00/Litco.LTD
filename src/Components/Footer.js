@@ -8,7 +8,7 @@ export default function Footer() {
   const isArabic = i18n.language === 'ar';
 
   return (
-    <Box sx={{ backgroundColor: '#333', padding: '20px', textAlign: 'center', color: '#fff', direction: isArabic ? 'rtl' : 'ltr' }}>
+    <Box sx={{ backgroundColor: '#333', padding: '40px 20px 20px', textAlign: 'center', color: '#fff', direction: isArabic ? 'rtl' : 'ltr' }}>
       <Typography variant="body2">
         {t('footerText')} &copy; {new Date().getFullYear()}
       </Typography>

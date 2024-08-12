@@ -8,10 +8,10 @@ export default function Mission() {
   const { t } = useTranslation();
   const isArabic = i18n.language === "ar";
   return (
-    <Stack sx={{ padding: "5% 10%" }}>
+    <Stack sx={{ padding: "5% 10%", marginBottom: { xs: "2rem", md: "4rem" }, }}>
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
-          <Box sx={{ textAlign: "center" }}>
+          <Box sx={{ textAlign: "center", margin: "20px" }}>
             <img
               src={missionVisionImg}
               alt="Mission and Vision"
@@ -31,6 +31,7 @@ export default function Mission() {
                 fontSize: "2.5rem",
                 fontWeight: "bold",
                 color: "#333",
+                marginBottom: "30px",
               }}
               variant="h4"
             >
