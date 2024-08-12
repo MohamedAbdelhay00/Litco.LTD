@@ -94,16 +94,16 @@ const Navbar = () => {
           <ListItemText primary={t("home")} />
         </ListItem>
         <ListItem button onClick={() => handleScroll("about-us")}>
-          <ListItemText primary={t("about")} />
+          <ListItemText primary={t("about-us")} />
         </ListItem>
         <ListItem button onClick={() => handleScroll("mission")}>
-          <ListItemText primary={t("vision")} />
+          <ListItemText primary={t("mission")} />
         </ListItem>
         <ListItem button onClick={() => handleScroll("services")}>
           <ListItemText primary={t("services")} />
         </ListItem>
         <ListItem button onClick={() => handleScroll("contact-us")}>
-          <ListItemText primary={t("contact")} />
+          <ListItemText primary={t("contact-us")} />
         </ListItem>
         <ListItem button onClick={changeLanguage}>
           <LanguageIcon />
@@ -181,10 +181,9 @@ const Navbar = () => {
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Button
-              variant="contained"
               onClick={changeLanguage}
               startIcon={<LanguageIcon sx={{ ml: 1 }} />}
-              sx={{ display: { xs: "none", md: "flex" } }}
+              sx={{ display: { xs: "none", md: "flex" }, color: "#4F4F4F" }}
             >
               {i18n.language === "en" ? "AR" : "EN"}
             </Button>
