@@ -13,15 +13,17 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useTranslation } from "react-i18next";
-import { useDirection } from "../context/DirectionContext";
-import logo from "../assets/images/logo3.png";
+import { useDirection } from "../../context/DirectionContext";
+import logo from "../../assets/images/logo3.png";
 import "./Navbar.css";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+  const isNotFoundPage = location.pathname === "/not-found";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
   const { t, i18n } = useTranslation();
-  const isArabic = i18n.language === 'ar';
   const { setDirection } = useDirection();
 
   const handleDrawerToggle = () => {
@@ -94,19 +96,19 @@ const Navbar = () => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <List>
-        <ListItem button onClick={() => handleScroll("home")}>
+        <ListItem  disabled={isNotFoundPage} button onClick={() => handleScroll("home")}>
           <ListItemText primary={t("home")} />
         </ListItem>
-        <ListItem button onClick={() => handleScroll("about-us")}>
+        <ListItem  disabled={isNotFoundPage} button onClick={() => handleScroll("about-us")}>
           <ListItemText primary={t("about-us")} />
         </ListItem>
-        <ListItem button onClick={() => handleScroll("mission")}>
+        <ListItem  disabled={isNotFoundPage} button onClick={() => handleScroll("mission")}>
           <ListItemText primary={t("mission")} />
         </ListItem>
-        <ListItem button onClick={() => handleScroll("strategy")}>
+        <ListItem  disabled={isNotFoundPage} button onClick={() => handleScroll("strategy")}>
           <ListItemText primary={t("strategy")} />
         </ListItem>
-        <ListItem button onClick={() => handleScroll("contact-us")}>
+        <ListItem  disabled={isNotFoundPage} button onClick={() => handleScroll("contact-us")}>
           <ListItemText primary={t("contact-us")} />
         </ListItem>
         <ListItem button onClick={changeLanguage}>
@@ -121,7 +123,7 @@ const Navbar = () => {
     <Box
       sx={{
         flexGrow: 1,
-        position: "sticky", // Standard support
+        position: "sticky",
         top: "0",
         zIndex: "1000",
         backgroundColor: "rgba(255, 255, 255, 0.9)",
@@ -161,7 +163,7 @@ const Navbar = () => {
                   sx={{
                     position: "relative",
                     "&:hover:after": {
-                      transform: "scaleX(1)",
+                      transform: isNotFoundPage ? "scaleX(0)" : "scaleX(1)",
                     },
                     "&:after": {
                       content: '""',
@@ -171,11 +173,12 @@ const Navbar = () => {
                       bottom: "0",
                       left: "0",
                       backgroundColor: "#1976d2",
-                      transform: activeLink === id ? "scaleX(1)" : "scaleX(0)",
+                      transform: activeLink === id && !isNotFoundPage ? "scaleX(1)" : "scaleX(0)",
                       transformOrigin: "bottom right",
                       transition: "transform 0.25s ease-out",
                     },
                   }}
+                  disabled={isNotFoundPage}
                 >
                   {t(id)}
                 </Button>

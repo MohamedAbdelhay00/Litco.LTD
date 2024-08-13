@@ -4,7 +4,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { useTranslation } from "react-i18next";
-import i18n from "../i18n";
+import i18n from "../../i18n";
 import ContactFormEn from "./ContactFormEn";
 import ContactFormAr from "./ContactFormAr";
 
@@ -36,7 +36,7 @@ export default function ContactUs() {
                 display: "flex",
                 alignItems: "center",
                 marginBottom: "10px",
-                color: "#004aad", // Customize this color
+                color: "#004aad",
               }}
               gap={2}
               onClick={() => window.open("tel:+966555344342")}
@@ -64,7 +64,7 @@ export default function ContactUs() {
                 display: "flex",
                 alignItems: "center",
                 marginBottom: "10px",
-                color: "#004aad", // Customize this color
+                color: "#004aad",
               }}
               gap={2}
               onClick={() => window.open("mailto:fadi_omar2010@hotmail.com")}
@@ -92,7 +92,7 @@ export default function ContactUs() {
                 display: "flex",
                 alignItems: "center",
                 marginBottom: "10px",
-                color: "#004aad", // Customize this color
+                color: "#004aad",
               }}
               gap={2}
               onClick={() =>

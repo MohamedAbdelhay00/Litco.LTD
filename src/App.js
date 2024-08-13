@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
 import AppRoutes from "./routing/AppRoutes";
 import { DirectionProvider } from "./context/DirectionContext";
 import "./App.css";

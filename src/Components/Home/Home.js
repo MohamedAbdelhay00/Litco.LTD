@@ -1,8 +1,8 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
-import bg from "../assets/images/ship-2.jpg";
+import bg from "../../assets/images/ship-2.jpg";
 import { useTranslation } from "react-i18next";
-import { keyframes } from '@mui/system';
+import { keyframes } from "@mui/system";
 
 const fadeIn = keyframes`
   from { opacity: 0; }
@@ -13,9 +13,9 @@ export default function Home() {
   const { t } = useTranslation();
 
   const scrollToContact = () => {
-    const contactSection = document.getElementById('contact-us');
+    const contactSection = document.getElementById("contact-us");
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+      contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -54,31 +54,32 @@ export default function Home() {
           variant="h3"
           sx={{
             fontWeight: 700,
-            fontSize: { xs: "2rem", md: "2.5rem" },  // Adjusted for smaller screens
+            fontSize: { xs: "2rem", md: "2.5rem" },
             color: "#fff",
             textAlign: "center",
-            width: { xs: "90%", md: "50%" },
+            width: { xs: "90%", md: "60%" },
             paddingTop: "5%",
-            lineHeight: 1.2, // Improved line height
+            lineHeight: 1.2,
           }}
         >
-          {t('welcome')}
+          {t("welcome")}
         </Typography>
         <Typography
           sx={{
             color: "#fff",
             textAlign: "center",
-            width: { xs: "80%", md: "50%" },
+            width: { xs: "80%", md: "40%" },
             paddingTop: "20px",
-            fontSize: { xs: "1rem", md: "1.5rem" },  // Adjusted for smaller screens
+            fontSize: { xs: "1rem", md: "1.5rem" },
+            marginBottom: "20px",
           }}
         >
-          {t('homeDescription')}
+          {t("homeDescription")}
         </Typography>
-        <Button 
-          variant="contained" 
+        <Button
+          variant="contained"
           sx={{ mt: 1, padding: "10px 20px", fontSize: "1rem" }}
-          onClick={scrollToContact} // Scroll to contact on click
+          onClick={scrollToContact}
         >
           {t("contact-us")}
         </Button>

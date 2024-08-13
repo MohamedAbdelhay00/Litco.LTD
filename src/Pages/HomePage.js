@@ -1,13 +1,12 @@
-// src/pages/HomePage.js
 import React from 'react';
-import Footer from '../Components/Footer';
-import AboutUs from '../Components/AboutUs';
-import ContactUs from '../Components/ContactUs';
-import './HomePage.css'; // Optional: for styling sections
-import Home from '../Components/Home';
+import Footer from '../Components/Footer/Footer';
+import AboutUs from '../Components/AboutUs/AboutUs';
+import ContactUs from '../Components/ContactUs/ContactUs';
+import './HomePage.css';
+import Home from '../Components/Home/Home';
 import { Box } from '@mui/material';
-import Mission from '../Components/Mission';
-import Strategy from '../Components/Strategy';
+import Mission from '../Components/Mission/Mission';
+import Strategy from '../Components/Strategy/Strategy';
 
 const HomePage = () => {
   return (

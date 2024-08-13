@@ -38,5 +38,8 @@
   "messageSent": "Message sent successfully!",
   "messageFailed": "Failed to send message. Please try again later.",
   "pleaseFillRequiredFields": "Please fill out all required fields.",
-  "footerText": "Leadership Ideas Trading Company. All rights reserved"
+  "footerText": "Leadership Ideas Trading Company. All rights reserved",
+  "error404": "Oops! The page you're looking for doesn't exist.",
+  "error404Description": "You might have mistyped the address or the page may have moved.",
+  "backToHome": "Back to Home"
 }

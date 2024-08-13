@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import i18n from "../i18n";
+import i18n from "../../i18n";
 import emailjs from "emailjs-com";
 import { Box, Button, TextField } from "@mui/material";
 import { toast } from "react-toastify";
@@ -161,21 +161,21 @@ export default function ContactFormAr() {
                 style: {
                   color: errors.email ? "#d32f2f" : "",
                   textAlign: isArabic ? "right" : "left",
-                }, // Label color and text alignment
+                },
               }}
               InputProps={{
                 sx: {
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: errors.email ? "#d32f2f" : "", // Border color
+                      borderColor: errors.email ? "#d32f2f" : "",
                     },
                     "&:hover fieldset": {
-                      borderColor: errors.email ? "#d32f2f" : "", // Hover border color
+                      borderColor: errors.email ? "#d32f2f" : "",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: errors.email ? "#d32f2f" : "", // Focused border color
+                      borderColor: errors.email ? "#d32f2f" : "",
                     },
-                    textAlign: isArabic ? "right" : "left", // Input text alignment
+                    textAlign: isArabic ? "right" : "left",
                   },
                 },
               }}
@@ -194,21 +194,21 @@ export default function ContactFormAr() {
                 style: {
                   color: errors.subject ? "#d32f2f" : "",
                   textAlign: isArabic ? "right" : "left",
-                }, // Label color and text alignment
+                },
               }}
               InputProps={{
                 sx: {
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: errors.subject ? "#d32f2f" : "", // Border color
+                      borderColor: errors.subject ? "#d32f2f" : "",
                     },
                     "&:hover fieldset": {
-                      borderColor: errors.subject ? "#d32f2f" : "", // Hover border color
+                      borderColor: errors.subject ? "#d32f2f" : "",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: errors.subject ? "#d32f2f" : "", // Focused border color
+                      borderColor: errors.subject ? "#d32f2f" : "",
                     },
-                    textAlign: isArabic ? "right" : "left", // Input text alignment
+                    textAlign: isArabic ? "right" : "left",
                   },
                 },
               }}
@@ -229,21 +229,21 @@ export default function ContactFormAr() {
                 style: {
                   color: errors.message ? "#d32f2f" : "",
                   textAlign: isArabic ? "right" : "left",
-                }, // Label color and text alignment
+                },
               }}
               InputProps={{
                 sx: {
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: errors.message ? "#d32f2f" : "", // Border color
+                      borderColor: errors.message ? "#d32f2f" : "",
                     },
                     "&:hover fieldset": {
-                      borderColor: errors.message ? "#d32f2f" : "", // Hover border color
+                      borderColor: errors.message ? "#d32f2f" : "",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: errors.message ? "#d32f2f" : "", // Focused border color
+                      borderColor: errors.message ? "#d32f2f" : "",
                     },
-                    textAlign: isArabic ? "right" : "left", // Input text alignment
+                    textAlign: isArabic ? "right" : "left",
                   },
                 },
               }}
