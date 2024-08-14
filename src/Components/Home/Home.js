@@ -3,6 +3,7 @@ import React from "react";
 import bg from "../../assets/images/ship-2.jpg";
 import { useTranslation } from "react-i18next";
 import { keyframes } from "@mui/system";
+import i18n from "../../i18n";
 
 const fadeIn = keyframes`
   from { opacity: 0; }
@@ -11,6 +12,7 @@ const fadeIn = keyframes`
 
 export default function Home() {
   const { t } = useTranslation();
+  const isArabic = i18n.language === "ar";
 
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact-us");
@@ -57,7 +59,7 @@ export default function Home() {
             fontSize: { xs: "2rem", md: "2.5rem" },
             color: "#fff",
             textAlign: "center",
-            width: { xs: "90%", md: "60%" },
+            width: { xs: "90%", md: "70%" },
             paddingTop: "5%",
             lineHeight: 1.2,
           }}
@@ -68,7 +70,7 @@ export default function Home() {
           sx={{
             color: "#fff",
             textAlign: "center",
-            width: { xs: "80%", md: "40%" },
+            width: { xs: "80%", md: isArabic ? "40%" : "50%" },
             paddingTop: "20px",
             fontSize: { xs: "1rem", md: "1.5rem" },
             marginBottom: "20px",
