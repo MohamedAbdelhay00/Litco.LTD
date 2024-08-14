@@ -31,7 +31,7 @@ export default function ContactUs() {
           </Typography>
           <Typography sx={{ marginBottom: "20px" }}>{t("fillForm")}</Typography>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <Box
+            {/* <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -57,7 +57,7 @@ export default function ContactUs() {
               <Typography sx={{ marginLeft: "10px", direction: "ltr" }}>
                 +966 55 534 4342
               </Typography>
-            </Box>
+            </Box> */}
 
             <Box
               sx={{
@@ -67,7 +67,7 @@ export default function ContactUs() {
                 color: "#004aad",
               }}
               gap={2}
-              onClick={() => window.open("mailto:fadi_omar2010@hotmail.com")}
+              onClick={() => window.open("mailto:info@litcoltd.com")}
             >
               <IconButton
                 sx={{
@@ -83,11 +83,11 @@ export default function ContactUs() {
                 <EmailIcon fontSize="medium" />
               </IconButton>
               <Typography sx={{ marginLeft: "10px" }}>
-                fadi_omar2010@hotmail.com
+                info@litcoltd.com
               </Typography>
             </Box>
 
-            <Box
+            {/* <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -115,7 +115,7 @@ export default function ContactUs() {
               <Typography sx={{ marginLeft: "10px" }}>
                 {t("whatsapp")}
               </Typography>
-            </Box>
+            </Box> */}
           </Box>
         </Grid>
         <Grid item xs={12} md={6}>

@@ -74,7 +74,7 @@ export default function Strategy() {
       </Typography>
       <Grid
         container
-        spacing={{ xs: 1, md: 4 }}
+        spacing={{ xs: 1, md: 2 }}
         justifyContent="center"
         sx={{ textAlign: "center", gap: "20px", paddingBottom: "20px" }}
       >
@@ -83,7 +83,7 @@ export default function Strategy() {
             item
             xs={12}
             sm={6}
-            md={3}
+            md={2}
             key={index}
             sx={{
               width: { xs: "100%", sm: "48%", md: "30%" },
